@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();  // Auto-increment primary key
             $table->string('title');  // Task title
-            $table->text('description');  // Task description (short description)
+            $table->text('description')->default(null);  // Task description (short description)
             $table->text('long_description')->nullable();  // Long description (optional)
             $table->boolean('completed')->default(false);  // Task status (completed or not)
             $table->timestamps();  // Created at and updated at timestamps
